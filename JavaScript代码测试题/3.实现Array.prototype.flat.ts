@@ -1,3 +1,4 @@
+// 1.迭代
 function flat (arr:any[], depth:number = 1):any[] {
   const res:any[] = []
   const stack:any[] = [...arr.map(item => [item, depth])]
@@ -10,4 +11,18 @@ function flat (arr:any[], depth:number = 1):any[] {
     }
   }
   return res.reverse()
+}
+
+
+// 2.递归
+function flat2 (arr:any[], depth:number = 1) {
+  const res:any[] = []
+  for(const a of arr) {
+    if(Array.isArray(a) && depth > 0 ) {
+      res.push(...flat(a, depth - 1))
+    } else {
+      res.push(a)
+    }
+  }
+  return res
 }
