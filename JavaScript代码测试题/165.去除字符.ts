@@ -12,3 +12,4 @@ function removeChars(input:string):string {
 }
 
 console.log(removeChars('cabbaabcca'));
+
